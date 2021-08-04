@@ -6,6 +6,8 @@ export default {
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },
+    type: { control: 'select' },
+    size: { control: 'select' },
   },
 };
 

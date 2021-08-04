@@ -6,7 +6,8 @@ export default {
     title: 'Components/Section',
     component: Section,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        sectionColor: { control: 'select' },
+        titleColor: { control: 'select' },
     },
 };
 

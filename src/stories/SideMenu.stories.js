@@ -6,7 +6,8 @@ export default {
     title: 'Components/SideMenu',
     component: SideMenu,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        panelColor: { control: 'select' },
+        titleColor: { control: 'select' },
     },
 };
 

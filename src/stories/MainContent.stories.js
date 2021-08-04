@@ -6,7 +6,8 @@ export default {
     title: 'Components/MainContent',
     component: MainContent,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        pageColor: { control: 'select' },
+        titleColor: { control: 'select' },
     },
 };
 

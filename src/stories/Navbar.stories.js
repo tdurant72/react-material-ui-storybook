@@ -6,7 +6,9 @@ export default {
     title: 'Components/Navbar',
     component: Navbar,
     argTypes: {
-
+        titleColor: { control: 'select' },
+        navColor: { control: 'select' },
+        navBorder: { control: 'select' },
     },
 };
 
