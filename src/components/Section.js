@@ -4,33 +4,37 @@ import styled from 'styled-components';
 import { H3 } from '../styles/TextStyles';
 import { colors } from '../styles/ColorStyles';
 
-const StyledSection = styled.div`
-    width:100%;
-    background-color:${ props => props.sectionColor === 'primary' ? colors.primary["500"] : props.sectionColor === 'secondary' ? colors.secondary["500"] : props.sectionColor === 'light' ? colors.neutral["50"] : colors.neutral["900"]};
-`;
-const SectionTitle = styled(H3) `
-text-align:center;
-    color: ${ props => props.titleColor === 'primary' ? colors.primary["500"] : props.titleColor === 'secondary' ? colors.secondary["500"] : props.titleColor === 'light' ? colors.neutral["50"] : colors.neutral["900"]};
-    margin: 10px;
-`;
-function Section({ title, titleColor, sectionColor, children, ...props }) {
+const Section = ({ title, txtColor, titleColor, sectionColor, children, ...props }) => {
     return (
-        <StyledSection sectionColor={sectionColor}>
+        <StyledSection sectionColor={sectionColor} txtColor={txtColor}>
             <SectionTitle titleColor={titleColor}>{title}</SectionTitle>
             {children}
         </StyledSection>
     )
 }
+const StyledSection = styled.div`
+    background-color:${ props => props.sectionColor};
+    color:${props => props.txtColor};
+    padding:10px;
+`;
+const SectionTitle = styled(H3) `
+text-align:center;
+    color: ${ props => props.titleColor};
+    margin: 10px;
+`;
+
 
 Section.propTypes = {
-    sectionColor: PropTypes.oneOf(['light', 'dark', 'primary', 'secondary']),
+    sectionColor: PropTypes.string,
+    titleColor: PropTypes.string,
     title: PropTypes.string,
-    titleColor: PropTypes.oneOf(['light', 'dark', 'primary', 'secondary']),
+    txtColor: PropTypes.string,
 }
 Section.defaultProps = {
-    sectionColor: 'light',
+    sectionColor: colors.neutral["50"],
+    titleColor: colors.neutral["900"],
     title: '',
-    titleColor: 'primary'
+    txtColor: colors.neutral["900"],
 }
-export default Section
 
+export default Section;

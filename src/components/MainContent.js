@@ -17,22 +17,22 @@ const StyledPage = styled.div`
     width:100%;
     margin:0;
     padding:0;
-    background-color:${ props => props.pageColor === 'primary' ? colors.primary["500"] : props.pageColor === 'secondary' ? colors.secondary["500"] : props.pageColor === 'light' ? colors.neutral["50"] : colors.neutral["900"]};
+    background-color:${ props => props.pageColor};
 `;
 const PageTitle = styled(H2) `
 text-align:center;
-    color: ${ props => props.titleColor === 'primary' ? colors.primary["500"] : props.titleColor === 'secondary' ? colors.secondary["500"] : props.titleColor === 'light' ? colors.neutral["50"] : colors.neutral["900"]};
+    color: ${ props => props.titleColor};
 `;
 
 MainContent.propTypes = {
-    pageColor: PropTypes.oneOf(['light', 'dark', 'primary', 'secondary']),
+    pageColor: PropTypes.string,
     title: PropTypes.string,
-    titleColor: PropTypes.oneOf(['light', 'dark', 'primary', 'secondary']),
+    titleColor: PropTypes.string,
 }
 MainContent.defaultProps = {
-    pageColor: 'light',
+    pageColor: colors.neutral["50"],
     title: '',
-    titleColor: 'primary'
+    titleColor: colors.neutral["900"]
 }
 export default MainContent;
 
